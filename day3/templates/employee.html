@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Employee List</h2>
+    {% csrf_token %}
+{% for emp in employees %}
+    <p>Name: {{ emp.name }}</p>
+    <p>Age: {{ emp.age }}</p>
+    <p>Email: {{ emp.email }}</p>
+
+    <img src="{{ emp.image.url }}" width="150">
+
+    <hr>
+{% endfor %}
+
+</body>
+</html>
